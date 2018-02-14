@@ -1,0 +1,4 @@
+[13.02.18 15:43] Starting Dreamling.
+[13.02.18 15:43] Starting Clock Thread.
+[13.02.18 15:43] attempting connect to server.
+[13.02.18 15:43] Closing Dreamling.
