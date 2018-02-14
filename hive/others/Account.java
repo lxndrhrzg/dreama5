@@ -1,6 +1,10 @@
 package others;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Date;
@@ -83,7 +87,13 @@ public class Account implements Serializable {
 	}
 	
 	public String generateCmdParams() {
-		String result = " -username " + Dreamling.USERNAME + " -password " + Dreamling.PASSWORD 
+		String[] credentials = {"defaultUsername", "defaultPassword"};
+		try {
+			credentials = Files.readAllLines(Paths.get("dreambotVIP.txt"), StandardCharsets.UTF_8).get(0).split(":");
+		} catch (Exception e) {e.printStackTrace();}
+		final String username = credentials[0];
+		final String password = credentials[1];
+		String result = " -username " + username + " -password " + password
 				+ " -script " + get("script")
 				+ " -world " + get("world")
 				+ " -title " + get("name")
@@ -98,4 +108,5 @@ public class Account implements Serializable {
 		}
 		return result;
 	}
+	
 }
