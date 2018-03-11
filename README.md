@@ -8,3 +8,11 @@
 	* multiple clients connecting to hive only. listening to his commands or sending him commands (also through tcp sockets, obviously). (I call these clients "dreamlings") (ran with dreama5/dreamling/dreamling/client/Dreamling.java)
 
 * finished this project in a matter of weeks. refactoring for years now. touch it with carefulness please, it's my baby
+
+### Todo list for myself
+
+* hive saves all dreamlings ever connected to. make hive expire and delete old ones?
+* synchronize collection-iterations (dreamserver and others). 
+* run persistant saving of dreamlings after each change on hive
+* double-check account synchronisation between dreamling and hive
+* stresstest

@@ -317,7 +317,7 @@ public class DreamServer {
 												s1.data.add(accId);
 												s1.data.add(acc.get("name"));
 												s1.data.add(acc.generateCmdParams());
-												sendSendable(s1, ctx);
+												sendSendable(s1, c.ctx);
 											}
 										}
 										break;
@@ -328,7 +328,7 @@ public class DreamServer {
 										for (int j = 0; j < connections.length; j++) {
 											Connector c = connections[j];
 											if (c != null && c.name.equalsIgnoreCase(targetDreamling)) {
-												sendSendable(s2, ctx);
+												sendSendable(s2, c.ctx);
 											}
 										}
 										break;
@@ -358,7 +358,7 @@ public class DreamServer {
 												s1.data.add(acc.get("id"));
 												s1.data.add(acc.get("name"));
 												s1.data.add(acc.generateCmdParams());
-												sendSendable(s1, ctx);
+												sendSendable(s1, c.ctx);
 											}
 										}
 									}
@@ -369,7 +369,7 @@ public class DreamServer {
 										if (c != null && c.name.equalsIgnoreCase(targetDreamling)) {
 											Sendable s1 = new Sendable();
 											s1.cmd = "killAll";
-											sendSendable(s1, ctx);
+											sendSendable(s1, c.ctx);
 										}
 									}
 									break;
